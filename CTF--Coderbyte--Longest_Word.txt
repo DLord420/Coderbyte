@@ -1,0 +1,18 @@
+### Longest Word
+"""Have the function LongestWord(sen) take the sen parameter being passed and return the largest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. """
+
+def LongestWord(sen):
+    temp = ""
+    longest = ""
+    for i in sen:
+        if not i.isalnum():
+            temp = temp + " "
+        else:
+            temp = temp + i
+    words = temp.split()
+    for i in words:
+        if len(i) > len(longest):
+            longest = i
+    return longest 
+print(LongestWord(input()))
+
